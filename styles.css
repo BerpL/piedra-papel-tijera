@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.marcador {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.jugador, .computadora {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.jugador h3, .computadora h3 {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.jugador p, .computadora p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.area-juego {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    min-height: 150px;
+}
+
+.mano-jugador, .mano-computadora {
+    font-size: 5em;
+    transition: transform 0.3s ease;
+}
+
+.mano-computadora {
+    transform: scaleX(-1);
+}
+
+.emoji-mano {
+    display: inline-block;
+}
+
+.vs {
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Animación de sacudida */
+@keyframes shake {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+@keyframes shake-reverse {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg) scaleX(-1);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg) scaleX(-1);
+    }
+    75% {
+        transform: translateY(-20px) rotate(-5deg) scaleX(-1);
+    }
+}
+
+.mano-jugador.shake {
+    animation: shake 0.6s ease-in-out 3;
+}
+
+.mano-computadora.shake {
+    animation: shake-reverse 0.6s ease-in-out 3;
+}
+
+/* Animación de revelación */
+@keyframes reveal {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.mano-jugador.reveal, .mano-computadora.reveal {
+    animation: reveal 0.5s ease-out;
+}
+
+.mano-computadora.reveal {
+    animation: reveal 0.5s ease-out;
+    transform: scaleX(-1);
+}
+
+.boton-opcion {
+    background-color: #667eea;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 120px;
+    color: white;
+}
+
+.boton-opcion:hover {
+    background-color: #764ba2;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.boton-opcion:active {
+    transform: translateY(0);
+}
+
+.boton-opcion p {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.resultado {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 120px;
+}
+
+#mensaje-resultado {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#elecciones {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.boton-reiniciar {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-reiniciar:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.victoria {
+    color: #28a745 !important;
+}
+
+.derrota {
+    color: #dc3545 !important;
+}
+
+.empate {
+    color: #ffc107 !important;
+}
+

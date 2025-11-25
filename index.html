@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Piedra, Papel o Tijera</h1>
+        
+        <div class="marcador">
+            <div class="jugador">
+                <h3>Jugador</h3>
+                <p id="puntaje-jugador">0</p>
+            </div>
+            <div class="computadora">
+                <h3>Computadora</h3>
+                <p id="puntaje-computadora">0</p>
+            </div>
+        </div>
+
+        <div class="opciones">
+            <button id="piedra" class="boton-opcion">
+                <p>Piedra</p>
+            </button>
+            <button id="papel" class="boton-opcion">
+                <p>Papel</p>
+            </button>
+            <button id="tijera" class="boton-opcion">
+                <p>Tijera</p>
+            </button>
+        </div>
+
+        <div class="area-juego">
+            <div class="mano-jugador" id="mano-jugador">
+                <span class="emoji-mano">✊</span>
+            </div>
+            <div class="vs">VS</div>
+            <div class="mano-computadora" id="mano-computadora">
+                <span class="emoji-mano">✊</span>
+            </div>
+        </div>
+
+        <div class="resultado">
+            <p id="mensaje-resultado">Elige tu opcion</p>
+            <div id="elecciones">
+                <p id="eleccion-jugador"></p>
+                <p id="eleccion-computadora"></p>
+            </div>
+        </div>
+
+        <button id="reiniciar" class="boton-reiniciar">Reiniciar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
